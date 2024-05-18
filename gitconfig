@@ -1,0 +1,25 @@
+[user]
+	name = Takashi Yamashina
+	email = takashi.yamashina@gmail.com
+[init]
+	defaultBranch = main
+[core]
+	pager = delta
+	editor = vim
+[push]
+	default = current
+[color]
+	ui = auto
+[alias]
+	lgn = log --graph --decorate --abbrev-commit --format=format:'%C(blue)%h%C(reset) - %C(green)(%ar)%C(reset)%C(yellow)%d%C(reset)\n  %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
+[sequence]
+	editor = code --wait
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+  diff-so-fancy=true
+  keep-plus-minus-markers=true
+  minus-emph-style="bold 94 89"
+  plus-emph-style="bold 29 29"
+  hunk-header-style="omit"
+  line-numbers=true

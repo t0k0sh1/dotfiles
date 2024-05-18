@@ -1,0 +1,15 @@
+alias ls="eza"
+alias ll="eza -al"
+alias mkdir="mkdir -p"
+alias cat="bat"
+alias xfind="fd"
+alias xgrep="rg"
+alias vi="nvim"
+
+# Laravel
+alias sail='./vendor/bin/sail'
+
+# Include custom aliases
+if [[ -f ~/.aliases.local ]]; then
+  source ~/.aliases.local
+fi
