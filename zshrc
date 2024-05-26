@@ -1,3 +1,5 @@
+RCRC=$HOME/dotfiles/rcrc
+
 eval "$(starship init zsh)"
 eval "$(fzf --zsh)"
 export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'

@@ -12,6 +12,16 @@
 	ui = auto
 [alias]
 	lgn = log --graph --decorate --abbrev-commit --format=format:'%C(blue)%h%C(reset) - %C(green)(%ar)%C(reset)%C(yellow)%d%C(reset)\n  %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
+  diff = "!f() { \
+        diff_command=\"git diff\"; \
+        if [ \"$#\" -gt 0 ]; then \
+            diff_command=\"$diff_command $@\"; \
+        fi; \
+        files=$(git diff --name-only \"$@\" | fzf --multi --preview \"$diff_command --color=always {} | delta\" --preview-window=right:60%:wrap); \
+        if [ -n \"$files\" ]; then \
+            eval $diff_command $files | delta; \
+        fi; \
+    }; f"
 [sequence]
 	editor = code --wait
 [interactive]
