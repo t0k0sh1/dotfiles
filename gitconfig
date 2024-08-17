@@ -22,6 +22,7 @@
             eval $diff_command $files | delta; \
         fi; \
     }; f"
+  co = checkout -b
 [sequence]
 	editor = code --wait
 [interactive]

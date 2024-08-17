@@ -1,4 +1,4 @@
-RCRC=$HOME/dotfiles/rcrc
+export RCRC=$HOME/dotfiles/rcrc
 
 eval "$(starship init zsh)"
 eval "$(fzf --zsh)"
