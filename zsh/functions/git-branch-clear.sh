@@ -1,3 +1,3 @@
-gbc() {
+git-branch-clear() {
   git branch --merged | grep -v "\*" | grep -v "main" | xargs -n 1 git branch -d
 }
