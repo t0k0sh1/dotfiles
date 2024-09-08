@@ -10,5 +10,5 @@ git-checkout-branch() {
     zle accept-line
   fi
 }
-zle -N git-branch
-bindkey '^B' git-branch
+zle -N git-checkout-branch
+bindkey '^B' git-checkout-branch
