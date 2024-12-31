@@ -5,6 +5,7 @@ alias cat="bat"
 alias xfind="fd"
 alias xgrep="rg"
 alias vi="nvim"
+alias sls="serverless"
 
 # Laravel
 alias sail='./vendor/bin/sail'
