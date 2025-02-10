@@ -5,9 +5,9 @@
 	defaultBranch = main
 [core]
 	pager = delta
-	editor = vim
+	editor = code --wait
 [push]
-	default = current
+	default = simple
 [color]
 	ui = auto
 [alias]
@@ -34,3 +34,5 @@
   plus-emph-style="bold 29 29"
   hunk-header-style="omit"
   line-numbers=true
+[merge]
+	tool = code --wait \"$MERGED\"
