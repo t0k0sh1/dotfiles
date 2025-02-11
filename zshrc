@@ -14,3 +14,5 @@ done
 
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
+
+eval "$(~/.local/bin/mise activate zsh)"
