@@ -18,12 +18,12 @@ git clone https://github.com/t0k0sh1/dotfiles.git ~/dotfiles
 
 ### Install rcm
 
-```
+``` bash
 brew install rcm
 ```
 
 Install the dotfiles:
 
-```
+``` bash
 env RCRC=$HOME/dotfiles/rcrc rcup
 ```
