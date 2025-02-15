@@ -8,7 +8,7 @@ fi
 
 # Golang
 export PATH="$PATH:$HOME/go/bin"
-export GOROOT=$(go1.22.3 env GOROOT)
+export GOROOT=$(go1.24.0 env GOROOT)
 export PATH=$GOROOT/bin:$PATH
 
 # Jetbrains Toolbox
