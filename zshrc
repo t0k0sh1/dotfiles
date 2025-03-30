@@ -26,3 +26,8 @@ fi
 
 # mise
 [[ -f ~/.local/bin/mise ]] && eval "$(~/.local/bin/mise activate zsh)"
+
+# poetry
+POETRY_VIRTUALENVS_PROMPT=" "
+
+export TMUX_TMPDIR=/tmp

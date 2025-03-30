@@ -5,7 +5,7 @@
 	defaultBranch = main
 [core]
 	pager = delta
-	editor = code --wait
+	editor = vi
 [push]
 	default = simple
 [color]
@@ -24,7 +24,7 @@
     }; f"
   co = checkout -b
 [sequence]
-	editor = code --wait
+	editor = vi
 [interactive]
 	diffFilter = delta --color-only
 [delta]
@@ -36,3 +36,5 @@
   line-numbers=true
 [merge]
 	tool = code --wait \"$MERGED\"
+[commit]
+	template = /Users/t0k0sh1/.gitmessage.txt

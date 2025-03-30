@@ -4,9 +4,11 @@ alias mkdir="mkdir -p"
 alias cat="bat"
 alias xfind="fd"
 alias xgrep="rg"
-alias vi="nvim"
+alias vi=${EDITOR}
+alias vim=${EDITOR}
 alias k="kubectl"
 alias sls="serverless"
+alias pytest="poetry run pytest"
 
 # Laravel
 alias sail='./vendor/bin/sail'
