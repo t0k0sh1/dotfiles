@@ -37,4 +37,4 @@
 [merge]
 	tool = code --wait \"$MERGED\"
 [commit]
-	template = /Users/t0k0sh1/.gitmessage.txt
+	template = ~/.gitmessage.txt

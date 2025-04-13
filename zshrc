@@ -24,10 +24,18 @@ if [ $commands[kubectl] ]; then
   source <(kubectl completion zsh)
 fi
 
+autoload bashcompinit && bashcompinit
+complete -C '/opt/homebrew/bin/aws_completer' aws
+
+FPATH="$HOME/.docker/completions:$FPATH"
+autoload -Uz compinit
+compinit
+
 # mise
 [[ -f ~/.local/bin/mise ]] && eval "$(~/.local/bin/mise activate zsh)"
 
 # poetry
 POETRY_VIRTUALENVS_PROMPT=" "
 
-export TMUX_TMPDIR=/tmp
+# postgresql client
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
