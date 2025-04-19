@@ -139,7 +139,7 @@ return {
     version = "*",
     config = function()
       require("toggleterm").setup({
-        open_mapping = [[<F12>]],
+        open_mapping = [[<C-t>]],
         direction = "float",
         float_opts = {
           border = "curved",

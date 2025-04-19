@@ -132,6 +132,7 @@ return {
           local filepath = vim.fn.expand("%:p")
           local filetype = vim.bo.filetype
           local filename = vim.fn.expand("%:t")
+          local dirname = vim.fn.expand("%:p:h")
 
           local handlers = {
             go = function()
@@ -144,6 +145,24 @@ return {
               else
                 code_path = filepath
                 test_path = filepath:gsub("%.go$", "_test.go")
+              end
+
+              return {
+                is_test = is_test,
+                code_path = code_path,
+                test_path = test_path,
+              }
+            end,
+            python = function()
+              local is_test = filename:match("test_%.py$") ~= nil
+              local code_path, test_path
+
+              if is_test then
+                test_path = filepath
+                code_path = dirname:reverse():gsub("crs/", "stset/", 1):reverse() .. "/" .. filename:gsub("^test_", "")
+              else
+                code_path = filepath
+                test_path = dirname:reverse():gsub("stset/", "crs/", 1):reverse() .. "/test_" .. filename
               end
 
               return {

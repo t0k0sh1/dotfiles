@@ -4,12 +4,31 @@ alias mkdir="mkdir -p"
 alias cat="bat"
 alias xfind="fd"
 alias xgrep="rg"
+
+# aliases for NeoVim
 alias n="nvim"
 alias vi=${EDITOR}
 alias vim=${EDITOR}
+
+# aliases for Docker and Docker Compose
+alias dc="docker compose"
+alias dcb="docker compose build"
+alias dcu="docker compose up -d"
+alias dcd="docker compose down"
+alias dcl="docker comppse logs"
+
+# aliases for applications
 alias k="kubectl"
 alias sls="serverless"
 alias pytest="poetry run pytest"
+
+# aliases for git
+alias g="git"
+alias gs="git status"
+alias ts="tig status"
+alias gd="git diff"
+alias gl="git pull"
+alias gp="git push"
 
 # Laravel
 alias sail='./vendor/bin/sail'

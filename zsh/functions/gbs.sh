@@ -1,5 +1,31 @@
 gbs() {
-  local branch
-  branch=$(git branch --all --color=always | grep -v HEAD | sed 's|remotes/[^/]*/||' | sort -u | fzf --ansi --preview "git log --oneline --graph --color=always {}" | sed 's/.* //' )
-  [ -n "$branch" ] && git switch "$branch" 2>/dev/null || git switch -c "$branch" --track origin/"$branch"
+  local query="$1"
+  local branches
+  local target
+
+  branches=$(git for-each-ref --format='%(refname:short)' refs/heads/)
+
+  if [[ -z "$query" ]]; then
+    # no parameter
+    target=$(echo "$branches" | fzf --preview='git log --oneline --decorate --color=always --graph {}' --ansi)
+    [[ -n "$target" ]] && git switch "$target"
+  else
+    # exist parameter
+    local matched
+    matched=($(echo "$branches" | grep -- "$query"))
+
+    if [[ ${#matched[@]} -eq 0 ]]; then
+      # no match
+      echo "No matching branches."
+      target=$(echo "$branches" | fzf --preview='git log --oneline --decorate --color=always --graph {}' --ansi)
+      [[ -n "$target" ]] && git switch "$target"
+    elif [[ ${#matched[@]} -eq 1 ]]; then
+      # if match only one branch
+      git switch "${matched[1]}"
+    else
+      # if match multiple branches
+      target=$(printf "%s\n" "${matched[@]}" | fzf --preview='git log --oneline --decorate --color=always --graph {}' --ansi --query="$query")
+      [[ -n "$target" ]] && git switch "$target"
+    fi
+  fi
 }
