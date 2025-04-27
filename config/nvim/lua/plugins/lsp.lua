@@ -12,7 +12,9 @@ return {
         "gopls",
         "goimports",
         "gofumpt",
+        "pyright",
         "css-lsp",
+        "zls",
       })
     end,
   },
@@ -156,6 +158,18 @@ return {
               semanticTokens = true,
             },
           },
+        },
+        pyright = {
+          settings = {
+            python = {
+              pythonPath = ".venv/bin/python",
+            },
+          },
+        },
+        zls = {
+          root_dir = function(...)
+            return require("lspconfig.util").root_pattern(".git")(...)
+          end,
         },
       },
       setup = {

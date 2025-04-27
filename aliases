@@ -15,12 +15,12 @@ alias dc="docker compose"
 alias dcb="docker compose build"
 alias dcu="docker compose up -d"
 alias dcd="docker compose down"
-alias dcl="docker comppse logs"
+alias dcl="docker compose logs"
 
 # aliases for applications
 alias k="kubectl"
 alias sls="serverless"
-alias pytest="poetry run pytest"
+alias pytest="uv run pytest"
 
 # aliases for git
 alias g="git"

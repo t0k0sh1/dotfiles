@@ -34,7 +34,17 @@ return {
       defaults = {
         prompt_prefix = " ",
         selection_caret = " ",
-        file_ignore_patterns = { ".git/", "^.cache/", "^LIbrary/", "node_modules/", "vendor/", ".aws-sam/" },
+        file_ignore_patterns = {
+          ".git/",
+          ".venv/",
+          "venv/",
+          "^.cache/",
+          "^LIbrary/",
+          "node_modules/",
+          "vendor/",
+          ".aws-sam/",
+          "target/",
+        },
         vimgrep_arguments = {
           "rg",
           "--color=never",
@@ -44,6 +54,11 @@ return {
           "--column",
           "--smart-case",
           "-uu",
+        },
+      },
+      pickers = {
+        find_files = {
+          find_command = { "fd", "--type", "f", "--strip-cwd-prefix" },
         },
       },
       extensions = {
@@ -66,6 +81,7 @@ return {
           builtin.find_files({
             no_ignore = false,
             hidden = true,
+            cwd = vim.fn.getcwd(),
           })
         end,
         desc = "Lists files in your current working directory, respects .gitignore",
@@ -74,7 +90,8 @@ return {
         ";r",
         function()
           local builtin = require("telescope.builtin")
-          builtin.live_grep()
+          -- builtin.live_grep()
+          builtin.current_buffer_fuzzy_find()
         end,
         desc = "Search for a string in your current working directory and get results live as you type, respects .gitignore",
       },
@@ -232,75 +249,6 @@ return {
       { "<leader>ob", "<cmd>OverseerBuild<cr>",       desc = "Task builder" },
       { "<leader>ot", "<cmd>OverseerTaskAction<cr>",  desc = "Task action" },
       { "<leader>oc", "<cmd>OverseerClearCache<cr>",  desc = "Clear cache" },
-    },
-  },
-  {
-    "yetone/avante.nvim",
-    event = "VeryLazy",
-    lazy = false,
-    version = false,
-    opts = {
-      provider = "copilot",
-      auto_suggestion_provider = "copilot",
-      behavior = {
-        auto_suggestions = true,
-        auto_set_highlight_group = true,
-        auto_set_keywords = true,
-        auto_apply_diff_after_generation = true,
-        support_paste_from_clipboard = true,
-      },
-      windows = {
-        position = "right",
-        width = 30,
-        sidebar_header = {
-          align = "center",
-          rounded = false,
-        },
-        ask = {
-          floating = true,
-          start_insert = true,
-          border = "rounded",
-        },
-      },
-      copilot = {
-        model = "gpt-4o-2024-05-13",
-        max_tokens = 4096,
-      },
-    },
-    build = "make",
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter",
-      "stevearc/dressing.nvim",
-      "nvim-lua/plenary.nvim",
-      "MunifTanjim/nui.nvim",
-      --- The below dependencies are optional,
-      "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
-      "zbirenbaum/copilot.lua", -- for providers='copilot'
-      {
-        -- support for image pasting
-        "HakonHarnes/img-clip.nvim",
-        event = "VeryLazy",
-        opts = {
-          -- recommended settings
-          default = {
-            embed_image_as_base64 = false,
-            prompt_for_file_name = false,
-            drag_and_drop = {
-              insert_mode = true,
-            },
-            -- required for Windows users
-            use_absolute_path = true,
-          },
-        },
-      },
-      {
-        -- Make sure to set this up properly if you have lazy=true
-        "MeanderingProgrammer/render-markdown.nvim",
-        opts = {
-          file_types = { "markdown", "Avante" },
-        },
-        ft = { "markdown", "Avante" },
-      },
     },
   },
   {

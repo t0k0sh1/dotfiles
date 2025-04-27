@@ -32,6 +32,7 @@ return {
             return vim.fn.getcwd()
           end,
         },
+        ["neotest-zig"] = {},
       },
       status = { virtual_text = true },
       output = { open_on_run = true },
@@ -154,15 +155,15 @@ return {
               }
             end,
             python = function()
-              local is_test = filename:match("test_%.py$") ~= nil
+              local is_test = filename:match("^test_.*%.py$") ~= nil
               local code_path, test_path
 
               if is_test then
                 test_path = filepath
-                code_path = dirname:reverse():gsub("crs/", "stset/", 1):reverse() .. "/" .. filename:gsub("^test_", "")
+                code_path = dirname:gsub("/tests", "/src", 1) .. "/" .. filename:gsub("^test_", "")
               else
                 code_path = filepath
-                test_path = dirname:reverse():gsub("stset/", "crs/", 1):reverse() .. "/test_" .. filename
+                test_path = dirname:gsub("/src", "/tests", 1) .. "/test_" .. filename
               end
 
               return {
@@ -185,7 +186,7 @@ return {
           for _, win in ipairs(api.nvim_list_wins()) do
             local buf = api.nvim_win_get_buf(win)
             local name = api.nvim_buf_get_name(buf)
-            
+
             if name == info.code_path then
               code_win = win
             elseif name == info.test_path then

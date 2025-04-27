@@ -25,6 +25,7 @@ return {
         "lua",
         "vue",
         "angular",
+        "zig",
       },
       query_linter = {
         enable = true,

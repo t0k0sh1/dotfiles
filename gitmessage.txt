@@ -1,0 +1,24 @@
+# ==== Format ====
+:emoji: message
+
+# ==== Emojis ====
+# **IMPLEMENT**
+# :sparkles:         ✨ Introduce new features
+# :lipstick:         💄 Add or update the UI and style files.
+# **FIX**
+# :bug:              🐛 Fix a bug
+# :fire:             🔥 Remove code or files
+# :recycle:          ♻️ Refactor code.
+# :zap:              ⚡️ Improve performance
+# :safety_vest:      🦺 Add or update code related to validation.
+# TESTING**
+# :white_check_mark: ✅ Add, update, or pass tests.
+# :test_tube:        🧪 Add failing tests.
+# DOCUMENTATION
+# :memo:             📝 Add or update documentation
+# CI/CD
+# :green_heart:      💚 Fix CI Build
+# :rocket:           🚀 Deploy stuff
+# :bento:            🍱 chore
+#
+# see: https://gitmoji.dev/
