@@ -1,24 +1,53 @@
-# ==== Format ====
 :emoji: message
 
 # ==== Emojis ====
-# **IMPLEMENT**
-# :sparkles:         ✨ Introduce new features
-# :lipstick:         💄 Add or update the UI and style files.
-# **FIX**
-# :bug:              🐛 Fix a bug
-# :fire:             🔥 Remove code or files
-# :recycle:          ♻️ Refactor code.
-# :zap:              ⚡️ Improve performance
-# :safety_vest:      🦺 Add or update code related to validation.
-# TESTING**
-# :white_check_mark: ✅ Add, update, or pass tests.
-# :test_tube:        🧪 Add failing tests.
-# DOCUMENTATION
-# :memo:             📝 Add or update documentation
+# ** Implementation **
+# :sparkles:                ✨ Add or update new features.
+# :safety_vest:             🦺 Add or update validation.
+# :lipstick:                💄 Add or update the UI code (HTML or CSS).
+# :bento:                   🍱 Add or update assets.
+# :triangular_flag_on_post: 🚩 Add, update or remove feature flags.
+# ** Improvement **
+# :recycle:                 ♻️ Refactor code.
+# :art:                     🎨 Improve structure / format of the code.
+# :zap:                     ⚡️ Improve performance.
+# :children_crossing:       🚸 Improve user experience / usability.
+# :coffin:                  ⚰️ Remove dead code.
+# :fire:                    🔥 Remove code or files
+# ** Fix **
+# :bug:                     🐛 Fix a bug
+# :adhesive_bandage:        🩹 Fix a non critical bug.
+# :ambulance:               🚑️ Fix a critical bug.
+# :lock:                    🔒️ Fix a security vulnerability.
+# :pencil2:                 ✏️ Fix typos.
+# :rotating_light:          🚨 Fix compiler / linter warnings.
+# ** Logging **
+# :loud_sound:              🔊 Add or update logs.
+# :mute:                    🔇 Remove logs.
+# ** Configurations **
+# :wrench:                  🔧 Add or update configuration files.
+# ** Scripts **
+# :hammer:                  🔨 Add or update development scripts.
+# ** Database **
+# :card_file_box:           🗃️ Add, update or remove tables or views.
+# :test_tube:               🧪 Add, UPDATE or remove test data.
+# :building_construction:   🏗️ Add or update changelogs.
+# ** Testing **
+# :white_check_mark:        ✅ Add or update tests.
+# ** Documentation **
+# :memo:                    📝 Add or update documentation.
+# :bulb:                    💡 Add or update comments in source code.
+# ** Dependency **
+# :heavy_plus_sign:         ➕ Add a dependency.
+# :heavy_minus_sign:        ➖ Remove a dependency.
+# :pushpin:                 📌 Pin dependencies to specific versions.
+# :arrow_up:                ⬆️ Upgrade dependencies.
+# :arrow_down:              ⬇️ Downgrade dependencies.
 # CI/CD
-# :green_heart:      💚 Fix CI Build
-# :rocket:           🚀 Deploy stuff
-# :bento:            🍱 chore
+# :green_heart:             💚 Fix CI build.
+# :rocket:                  🚀 Deploy stuff
+# :bricks:                  🧱 Infrastructure related changes.
+# ** Miscellaneous **
+# :package:                 📦️ chore
 #
 # see: https://gitmoji.dev/
