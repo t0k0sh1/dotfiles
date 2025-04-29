@@ -21,6 +21,7 @@ alias dcl="docker compose logs"
 alias k="kubectl"
 alias sls="serverless"
 alias pytest="uv run pytest"
+alias tf="terraform"
 
 # aliases for git
 alias g="git"

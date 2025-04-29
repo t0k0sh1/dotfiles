@@ -15,6 +15,7 @@ return {
         "pyright",
         "css-lsp",
         "zls",
+        "tflint",
       })
     end,
   },
@@ -166,11 +167,8 @@ return {
             },
           },
         },
-        zls = {
-          root_dir = function(...)
-            return require("lspconfig.util").root_pattern(".git")(...)
-          end,
-        },
+        zls = {},
+        terraformls = {},
       },
       setup = {
         settings = {

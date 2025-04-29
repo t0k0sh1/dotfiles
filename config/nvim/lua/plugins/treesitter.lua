@@ -26,6 +26,8 @@ return {
         "vue",
         "angular",
         "zig",
+        "terraform",
+        "hcl",
       },
       query_linter = {
         enable = true,
