@@ -55,6 +55,10 @@ FPATH="$HOME/.docker/completions:$FPATH"
 autoload -Uz compinit
 compinit
 
+# uv and uvx
+eval "$(uv generate-shell-completion zsh)"
+eval "$(uvx --generate-shell-completion zsh)"
+
 # mise
 [[ -f ~/.local/bin/mise ]] && eval "$(~/.local/bin/mise activate zsh)"
 
@@ -64,3 +68,5 @@ POETRY_VIRTUALENVS_PROMPT=" "
 # postgresql client
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 
+# golang
+export PATH="$PATH:$(go env GOPATH)/bin"

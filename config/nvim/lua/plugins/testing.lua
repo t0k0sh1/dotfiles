@@ -32,7 +32,6 @@ return {
             return vim.fn.getcwd()
           end,
         },
-        ["neotest-zig"] = {},
       },
       status = { virtual_text = true },
       output = { open_on_run = true },

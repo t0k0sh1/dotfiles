@@ -4,12 +4,38 @@
 [init]
 	defaultBranch = main
 [core]
+  compression = 9
+  whitespace = error
+  preloadindex = true
 	pager = delta
 	editor = vi
+[advance]
+  addEmptyPathspec = false
+  pushNonFastForward = false
+  statusHints = false
+[pager]
+  branch = false
+  tag = false
+[status]
+  branch = true
+  showStash = true
+  showUntrackedFiles = all
+[branch]
+  sort = -committerdate
+[tag]
+  sort = -taggerdate
 [push]
+  autoSetupRemote = true
 	default = simple
+  followTags = true
 [color]
 	ui = auto
+[color "branch"]
+  current = magenta
+  local = default
+  remote = yellow
+  upstream = green
+  plain = blue
 [alias]
 	lgn = log --graph --decorate --abbrev-commit --format=format:'%C(blue)%h%C(reset) - %C(green)(%ar)%C(reset)%C(yellow)%d%C(reset)\n  %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
   diff = "!f() { \
@@ -37,9 +63,12 @@
 [merge]
 	tool = code --wait \"$MERGED\"
 [commit]
+  verbose = true
 	template = ~/.gitmessage.txt
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[url "git@github.com:t0k0sh1/"]
+  insteadOf = "my:"

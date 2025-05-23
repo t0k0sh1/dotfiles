@@ -45,3 +45,6 @@ vim.api.nvim_create_autocmd({ "BufLeave", "FocusLost", "InsertLeave" }, {
     end
   end,
 })
+
+vim.g.lazyvim_python_lsp = "pyright"
+vim.g.lazyvim_python_ruff = "ruff"

@@ -16,6 +16,7 @@ return {
         "css-lsp",
         "zls",
         "tflint",
+        "sqlfluff",
       })
     end,
   },
@@ -27,7 +28,7 @@ return {
         cssls = {},
         tailwindcss = {
           root_dir = function(...)
-            return require("slpconfig.util").root_pattern(".git")(...)
+            return require("lspconfig.util").root_pattern(".git")(...)
           end,
         },
         tsserver = {
