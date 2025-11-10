@@ -1,14 +1,15 @@
 [user]
-	name = Takashi Yamashina
-	email = takashi.yamashina@gmail.com
+  name = Takashi Yamashina
+  email = takashi.yamashina@gmail.com
 [init]
-	defaultBranch = main
+  defaultBranch = main
+  templateDir = ~/.git_template
 [core]
   compression = 9
   whitespace = error
   preloadindex = true
-	pager = delta
-	editor = vi
+  pager = delta
+  editor = vi
 [advance]
   addEmptyPathspec = false
   pushNonFastForward = false
@@ -26,10 +27,10 @@
   sort = -taggerdate
 [push]
   autoSetupRemote = true
-	default = simple
+  default = simple
   followTags = true
 [color]
-	ui = auto
+  ui = auto
 [color "branch"]
   current = magenta
   local = default
@@ -37,7 +38,7 @@
   upstream = green
   plain = blue
 [alias]
-	lgn = log --graph --decorate --abbrev-commit --format=format:'%C(blue)%h%C(reset) - %C(green)(%ar)%C(reset)%C(yellow)%d%C(reset)\n  %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
+  lgn = log --graph --decorate --abbrev-commit --format=format:'%C(blue)%h%C(reset) - %C(green)(%ar)%C(reset)%C(yellow)%d%C(reset)\n  %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
   diff = "!f() { \
         diff_command=\"git diff\"; \
         if [ \"$#\" -gt 0 ]; then \
@@ -49,10 +50,11 @@
         fi; \
     }; f"
   co = checkout -b
+  n = now --all --stat
 [sequence]
-	editor = vi
+  editor = vi
 [interactive]
-	diffFilter = delta --color-only
+  diffFilter = delta --color-only
 [delta]
   diff-so-fancy=true
   keep-plus-minus-markers=true
@@ -61,14 +63,14 @@
   hunk-header-style="omit"
   line-numbers=true
 [merge]
-	tool = code --wait \"$MERGED\"
+  tool = code --wait \"$MERGED\"
 [commit]
   verbose = true
-	template = ~/.gitmessage.txt
+  template = ~/.gitmessage.txt
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
 [url "git@github.com:t0k0sh1/"]
   insteadOf = "my:"

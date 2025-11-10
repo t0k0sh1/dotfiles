@@ -1,9 +1,9 @@
 return {
   {
-    -- MASON
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     opts = function(_, opts)
       vim.list_extend(opts.ensure_installed, {
+        "stylua",
         "luacheck",
         "shellcheck",
         "shfmt",
@@ -14,9 +14,8 @@ return {
         "gofumpt",
         "pyright",
         "css-lsp",
-        "zls",
-        "tflint",
-        "sqlfluff",
+        "markdownlint-cli2",
+        "markdown-toc",
       })
     end,
   },
@@ -168,8 +167,7 @@ return {
             },
           },
         },
-        zls = {},
-        terraformls = {},
+        marksman = {},
       },
       setup = {
         settings = {
@@ -210,25 +208,32 @@ return {
       },
     },
   },
+  -- {
+  --   "L3MON4D3/LuaSnip",
+  --   lazy = true,
+  --   build = (not LazyVim.is_win())
+  --       and "echo 'NOTE: jsregexp is optional, so not a big deal if it fails to build'; make install_jsregexp"
+  --     or nil,
+  --   dependencies = {
+  --     {
+  --       "rafamadriz/friendly-snippets",
+  --       config = function()
+  --         require("luasnip.loaders.from_vscode").lazy_load()
+  --         require("luasnip.loaders.from_vscode").lazy_load({ paths = { vim.fn.stdpath("config") .. "/snippets" } })
+  --       end,
+  --     },
+  --   },
+  --   opts = {
+  --     history = true,
+  --     delete_check_events = "TextChanged",
+  --   },
+  -- },
   {
-    "L3MON4D3/LuaSnip",
-    lazy = true,
-    build = (not LazyVim.is_win())
-        and "echo 'NOTE: jsregexp is optional, so not a big deal if it fails to build'; make install_jsregexp"
-      or nil,
-    dependencies = {
-      {
-        "rafamadriz/friendly-snippets",
-        config = function()
-          require("luasnip.loaders.from_vscode").lazy_load()
-          require("luasnip.loaders.from_vscode").lazy_load({ paths = { vim.fn.stdpath("config") .. "/snippets" } })
-        end,
-      },
-    },
-    opts = {
-      history = true,
-      delete_check_events = "TextChanged",
-    },
+    "hrsh7th/nvim-cmp",
+    dependencies = { "hrsh7th/cmp-emoji" },
+    opts = function(_, opts)
+      table.insert(opts.sources, { name = "emoji" })
+    end,
   },
   {
     "nvim-cmp",
@@ -242,5 +247,38 @@ return {
       table.insert(opts.sources, { name = "luasnip" })
       table.insert(opts.sources, { name = "emoji" })
     end,
+  },
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      servers = {
+        yamlls = {
+          settings = {
+            yaml = {
+              customTags = {
+                "!fn",
+                "!And",
+                "!If",
+                "!Not",
+                "!Equals",
+                "!Or",
+                "!FindInMap sequence",
+                "!Base64",
+                "!Cidr",
+                "!Ref",
+                "!Ref Scalar",
+                "!Sub",
+                "!GetAtt",
+                "!GetAZs",
+                "!ImportValue",
+                "!Select",
+                "!Split",
+                "!Join sequence",
+              },
+            },
+          },
+        },
+      },
+    },
   },
 }

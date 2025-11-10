@@ -1,35 +1,37 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
-    tag = "v0.9.3",
-    opts = {
-      ensure_installed = {
-        "javascript",
-        "typescript",
-        "html",
-        "css",
-        "scss",
-        "go",
-        "gomod",
-        "gowork",
-        "gosum",
+    opts = function(_, opts)
+      -- add tsx and treesitter
+      vim.list_extend(opts.ensure_installed, {
+        "gitignore",
+        "regex",
         "json",
         "yaml",
         "toml",
-        "gitignore",
-        "graphql",
-        "http",
-        "sql",
+        "html",
+        "css",
+        "scss",
         "vim",
         "lua",
-        "sql",
-        "zig",
-      },
-      query_linter = {
-        enable = true,
-        use_virtual_text = true,
-        lint_events = { "BufWrite", "CursorHold" },
-      },
-    },
+        "javascript",
+        "tsx",
+        "typescript",
+        "python",
+        "go",
+        "gomod",
+        "gosum",
+        "bash",
+        "html",
+        "query",
+        "markdown",
+        "markdown_inline",
+      })
+      -- vim.list_extend(opts.query_linter, {
+      --   enable = true,
+      --   use_virtual_text = true,
+      --   lint_events = { "BufWrite", "CursorHold" },
+      -- })
+    end,
   },
 }

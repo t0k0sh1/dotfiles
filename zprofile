@@ -7,9 +7,9 @@ fi
 . $HOME/.cargo/env
 
 # Golang
-export PATH="$PATH:$HOME/go/bin"
-export GOROOT=$(go1.24.2 env GOROOT)
-export PATH=$GOROOT/bin:$PATH
+# export PATH="$PATH:$HOME/go/bin"
+# export GOROOT=$(go1.23.0 env GOROOT)
+# export PATH=$GOROOT/bin:$PATH
 
 # Jetbrains Toolbox
 export PATH="$PATH:$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
