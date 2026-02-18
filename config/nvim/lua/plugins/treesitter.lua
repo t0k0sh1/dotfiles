@@ -23,15 +23,7 @@ return {
         "gosum",
         "bash",
         "html",
-        "query",
-        "markdown",
-        "markdown_inline",
       })
-      -- vim.list_extend(opts.query_linter, {
-      --   enable = true,
-      --   use_virtual_text = true,
-      --   lint_events = { "BufWrite", "CursorHold" },
-      -- })
     end,
   },
 }

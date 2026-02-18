@@ -34,6 +34,11 @@ alias gl="git log"
 alias t="tig"
 alias ts="tig status"
 alias ta="tig --all"
+alias gn="g n"
+alias gwr="git gtr"
+
+# alises for homebrew
+alias brewup="brew update && brew upgrade && brew cleanup"
 
 # aliases for Python
 alias pytest="uv run pytest"
@@ -41,6 +46,9 @@ alias streamlit="uv run streamlit"
 
 # Laravel
 alias sail='./vendor/bin/sail'
+
+# Claude Code
+alias cc="claude"
 
 # Include custom aliases
 if [[ -f ~/.aliases.local ]]; then

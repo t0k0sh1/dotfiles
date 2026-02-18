@@ -28,7 +28,7 @@
 [push]
   autoSetupRemote = true
   default = simple
-  followTags = true
+	followTags = true
 [color]
   ui = auto
 [color "branch"]
@@ -73,3 +73,9 @@
   required = true
 [url "git@github.com:t0k0sh1/"]
   insteadOf = "my:"
+[coderabbit]
+	machineId = cli/2d16f56a31b249deab33dc4a64e13955
+[gtr "editor"]
+	default = cursor
+[gtr "ai"]
+	default = claude
