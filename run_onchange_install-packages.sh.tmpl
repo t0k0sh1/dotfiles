@@ -1,0 +1,4 @@
+#!/bin/bash
+set -euo pipefail
+# Brewfileの変更を検知して brew bundle を実行
+brew bundle --file="{{ .chezmoi.sourceDir }}/Brewfile"

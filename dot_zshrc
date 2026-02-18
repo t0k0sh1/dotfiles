@@ -1,0 +1,78 @@
+# ============================
+# PATH
+# ============================
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+export PATH="$PATH:$HOME/.antigravity/antigravity/bin"
+export PNPM_HOME="$HOME/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+export PATH="$PATH:$(go env GOPATH)/bin"
+
+# ============================
+# fpath（compinit前にすべて設定）
+# ============================
+fpath=(
+  "$HOME/.zsh/completions"
+  "$HOME/.zsh"
+  "$HOME/.docker/completions"
+  $fpath
+)
+
+# ============================
+# zsh completion（1回のみ）
+# ============================
+autoload -Uz compinit
+compinit
+autoload bashcompinit && bashcompinit
+
+# ============================
+# プロンプト
+# ============================
+source "$HOME/.zsh/completions/git-prompt.sh"
+zstyle ':completion:*:*:git:*' script "$HOME/.zsh/completions/git-completion.bash"
+GIT_PS1_SHOWDIRTYSTATE=true
+GIT_PS1_SHOWUNTRACKEDFILES=true
+GIT_PS1_SHOWSTASHSTATE=true
+GIT_PS1_SHOWUPSTREAM=auto
+setopt PROMPT_SUBST
+PS1='%F{green}%n@%m%f: %F{cyan}%~%f %F{red}$(__git_ps1 "(%s)")%f\$ '
+
+# ============================
+# ツール初期化
+# ============================
+eval "$(fzf --zsh)"
+export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
+export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
+
+eval "$(zoxide init zsh)"
+[[ -f "$HOME/.local/bin/mise" ]] && eval "$("$HOME/.local/bin/mise" activate zsh)"
+
+eval "$(uv generate-shell-completion zsh)"
+eval "$(uvx --generate-shell-completion zsh)"
+
+# ============================
+# 補完設定
+# ============================
+complete -C '/opt/homebrew/bin/aws_completer' aws
+(( $+commands[kubectl] )) && source <(kubectl completion zsh)
+source "$HOME/.zsh/completions/_git-gtr"
+
+# ============================
+# カスタム関数・エイリアス
+# ============================
+for func in "$HOME/.zsh/functions/"*; do source "$func"; done
+[[ -f "$HOME/.aliases" ]] && source "$HOME/.aliases"
+
+# ============================
+# その他設定
+# ============================
+POETRY_VIRTUALENVS_PROMPT=" "
+alias claude-mem='bun "$HOME/.claude/plugins/marketplaces/thedotmack/plugin/scripts/worker-service.cjs"'
+[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
+
+# ============================
+# ローカル設定（最後）
+# ============================
+[[ -f "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"
