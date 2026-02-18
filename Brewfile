@@ -8,6 +8,7 @@ brew "delta"
 brew "zoxide"
 brew "zellij"
 brew "tig"
+brew "yazi"
 brew "chezmoi"
 
 # Development tools
