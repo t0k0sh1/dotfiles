@@ -23,20 +23,15 @@ return {
         lazy = true,
       },
     },
-    -- change some options
-    opts = {
-      defaults = {
-        layout_strategy = "horizontal",
-        layout_config = { prompt_position = "top" },
-        sorting_strategy = "ascending",
-        winblend = 0,
-      },
-    },
-    config = function(_, opts)
+    config = function()
       require("telescope").setup({
         defaults = {
-          prompt_prefix = " ",
-          selection_caret = " ",
+          layout_strategy = "horizontal",
+          layout_config = { prompt_position = "top" },
+          sorting_strategy = "ascending",
+          winblend = 0,
+          prompt_prefix = " ",
+          selection_caret = " ",
           file_ignore_patterns = {
             ".git/",
             ".venv/",

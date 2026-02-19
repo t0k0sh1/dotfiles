@@ -9,7 +9,6 @@ return {
         "json",
         "yaml",
         "toml",
-        "html",
         "css",
         "scss",
         "vim",

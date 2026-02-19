@@ -37,18 +37,8 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.splitkeep = "cursor"
 vim.opt.mouse = ""
-vim.opt.expandtab = true
 
 vim.opt.formatoptions:append({ "r" })
-
-vim.api.nvim_create_autocmd({ "BufLeave", "FocusLost", "InsertLeave" }, {
-  pattern = "*",
-  callback = function()
-    if vim.bo.modified and vim.bo.buftype == "" then
-      vim.cmd("silent! write")
-    end
-  end,
-})
 
 vim.g.lazyvim_python_lsp = "pyright"
 vim.g.lazyvim_python_ruff = "ruff"
