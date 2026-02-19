@@ -22,16 +22,6 @@ keymap.set("n", "<Leader>w", ":update<Return>", opts)
 keymap.set("n", "<Leader>q", ":quit<Return>", opts)
 keymap.set("n", "<Leader>Q", ":qa!<Return>", opts)
 
--- Split windows
--- keymap.set("n", "ss", ":split<Return>", opts)
--- keymap.set("n", "sv", ":vsplit<Return>", opts)
-
--- Move window
--- keymap.set("n", "<C-h>", "<C-w>h", opts)
--- keymap.set("n", "<C-k>", "<C-w>k", opts)
--- keymap.set("n", "<C-j>", "<C-w>j", opts)
--- keymap.set("n", "<C-l>", "<C-w>l", opts)
-
 -- Move buffer
 keymap.set("n", "<S-h>", ":bprevious<CR>", opts)
 keymap.set("n", "<S-l>", ":bnext<CR>", opts)
@@ -50,7 +40,21 @@ keymap.set(
   "<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>",
   { desc = "Switch Buffer", noremap = true }
 )
-keymap.set("n", "<leader><space>", LazyVim.pick("files"), { desc = "Find Files (Root Dir)", noremap = true })
+keymap.set(
+  "n",
+  "<leader><space>",
+  LazyVim.pick("files"),
+  { desc = "Find Files excludes hidden files (Root Dir)", noremap = true }
+)
+keymap.set("n", ";f", function()
+  local builtin = require("telescope.builtin")
+  builtin.find_files({
+    desc = "Find Files includes hidden files (Root Dir)",
+    no_ignore = true,
+    hidden = true,
+    cwd = vim.fn.getcwd(),
+  })
+end, opts)
 keymap.set("n", "<leader>/", LazyVim.pick("live_grep"), { desc = "Grep (Root Dir)", noremap = true })
 -- find
 keymap.set(
@@ -88,15 +92,6 @@ keymap.set("n", "<leader>ss", function()
   local builtin = require("telescope.builtin")
   builtin.treesitter()
 end, { desc = "Lists Function names, variables, from Treesitter", noremap = true })
--- Lists files in your current working directory, respects .gitignore
-keymap.set("n", ";f", function()
-  local builtin = require("telescope.builtin")
-  builtin.find_files({
-    no_ignore = true,
-    hidden = true,
-    cwd = vim.fn.getcwd(),
-  })
-end, opts)
 keymap.set("n", "<leader>sR", "<cmd>Telescope resume<cr>", { desc = "Search Resume", noremap = true })
 
 -- hop
