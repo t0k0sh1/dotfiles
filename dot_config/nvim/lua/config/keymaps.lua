@@ -99,9 +99,6 @@ keymap.set("n", ";f", function()
 end, opts)
 keymap.set("n", "<leader>sR", "<cmd>Telescope resume<cr>", { desc = "Search Resume", noremap = true })
 
--- NeoTree
-keymap.set("n", "<leader>t", ":Neotree reveal<CR>", opts)
-
 -- hop
 keymap.set("n", "<leader>h", "<cmd>HopWord<CR>", opts)
 
@@ -111,48 +108,4 @@ keymap.set("n", "<leader>]t", function()
 end, opts)
 keymap.set("n", "<leader>[t", function()
   require("todo-comments").jump_prev()
-end, opts)
-
--- Refactoring
-keymap.set("n", "<leader>rn", function()
-  return ":IncRename " .. vim.fn.expand("<cword>")
-end, { noremap = true, expr = true, silent = true })
-keymap.set("v", "<leader>r", function()
-  require("refactoring").select_refactor({
-    show_success_message = true,
-  })
-end, { noremap = true, expr = true, silent = true })
-
--- Neotest
--- Run File
-keymap.set("n", ";tt", function()
-  require("neotest").run.run(vim.fn.expand("%"))
-end, opts)
--- Run Nearest
-keymap.set("n", ";tr", function()
-  require("neotest").run.run()
-end, opts)
--- Run All Test Files
-keymap.set("n", ";tT", function()
-  require("neotest").run.run(vim.loop.cwd())
-end, opts)
--- Run Last
-keymap.set("n", ";tl", function()
-  require("neotest").run.run_last()
-end, opts)
--- Toggle Summary
-keymap.set("n", ";ts", function()
-  require("neotest").summary.toggle()
-end, opts)
--- Show Output
-keymap.set("n", ";to", function()
-  require("neotest").output.open({ enter = true, auto_close = true })
-end, opts)
--- Toggle Output Panel
-keymap.set("n", ";tO", function()
-  require("neotest").output_panel.toggle()
-end, opts)
--- Stop
-keymap.set("n", ";tS", function()
-  require("neotest").run.stop()
 end, opts)
