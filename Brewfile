@@ -1,4 +1,6 @@
 # CLI utilities
+brew "neovim"
+brew "neovim-remote"
 brew "eza"
 brew "ripgrep"
 brew "fd"
