@@ -1,0 +1,4 @@
+cls() {
+  source ~/.zshrc
+  clear
+}
