@@ -31,7 +31,7 @@ dotfiles/
 ├── dot_gitconfig                          # Git 設定
 ├── dot_tigrc                              # tig 設定
 ├── dot_editorconfig                       # EditorConfig
-├── dot_config/nvim/                       # Neovim 設定（別リポジトリからクローン）
+├── dot_config/nvim/                       # Neovim（LazyVim）設定
 ├── Brewfile                               # brew bundle 用パッケージリスト
 ├── install.sh                             # 新規マシン用セットアップスクリプト
 └── run_onchange_install-packages.sh.tmpl  # Brewfile 変更時に chezmoi が自動実行
@@ -59,6 +59,5 @@ dotfiles/
 
 ## 注意事項
 
-- Neovim 設定（`~/.config/nvim`）は[別リポジトリ](https://github.com/t0k0sh1/nvim)で管理されており、このリポジトリには含まれない
 - `dot_zshrc` の末尾に `~/.zshrc.local` のソースがある。マシン固有設定はそちらへ
 - `dot_gitconfig` にはユーザー名・メールアドレスがハードコードされている（fork する場合は要修正）

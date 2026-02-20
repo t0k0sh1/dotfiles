@@ -12,9 +12,4 @@ fi
 brew install chezmoi
 chezmoi init --apply t0k0sh1
 
-# nvim 設定を別途クローン
-if [[ ! -d "$HOME/.config/nvim" ]]; then
-  git clone git@github.com:t0k0sh1/nvim.git "$HOME/.config/nvim"
-fi
-
 echo "Setup complete!"

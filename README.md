@@ -13,7 +13,6 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/t0k0sh1/dotfiles/main/in
 `install.sh` の処理:
 1. Homebrew が未インストールであればインストール
 2. chezmoi をインストールして dotfiles を適用 (`chezmoi init --apply t0k0sh1`)
-3. Neovim 設定を `~/.config/nvim` へクローン（未存在の場合のみ）
 
 ### chezmoi 導入済みの場合
 
@@ -157,7 +156,7 @@ chezmoi は `dot_` プレフィックスを `.` に変換してホームディ�
 
 | ツール | 用途 |
 |--------|------|
-| [neovim](https://neovim.io/) | エディタ（設定: [t0k0sh1/nvim](https://github.com/t0k0sh1/nvim)） |
+| [neovim](https://neovim.io/) | エディタ |
 | [eza](https://github.com/eza-community/eza) | モダン ls |
 | [ripgrep](https://github.com/BurntSushi/ripgrep) | 高速 grep |
 | [fd](https://github.com/sharkdp/fd) | 高速 find |
@@ -173,8 +172,3 @@ chezmoi は `dot_` プレフィックスを `.` に変換してホームディ�
 | [uv](https://github.com/astral-sh/uv) | Python パッケージ管理 |
 | [git](https://git-scm.com/) / [git-lfs](https://git-lfs.com/) | バージョン管理 |
 
----
-
-## 関連リポジトリ / Related
-
-- [t0k0sh1/nvim](https://github.com/t0k0sh1/nvim) — Neovim 設定（LazyVim ベース、独立リポジトリ）
