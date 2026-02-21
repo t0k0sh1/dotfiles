@@ -34,6 +34,7 @@ alias gl="git log"
 alias t="tig"
 alias ts="tig status"
 alias ta="tig --all"
+alias lg="lazygit"
 alias gn="g n"
 alias gwr="git gtr"
 

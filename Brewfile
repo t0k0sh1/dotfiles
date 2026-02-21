@@ -20,3 +20,4 @@ brew "uv"
 # Git
 brew "git"
 brew "git-lfs"
+brew "lazygit"
