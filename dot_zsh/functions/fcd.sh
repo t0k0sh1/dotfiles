@@ -1,3 +1,4 @@
+# Description: Find and cd into a directory with fzf (func name: cdf)
 cdf() {
   local dir
   dir=$(find ${1:-.} -type d 2>/dev/null \

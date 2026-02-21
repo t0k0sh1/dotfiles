@@ -1,4 +1,4 @@
-# fzf でプロセスを選択してkill（TABで複数選択可）
+# Description: Kill processes selected with fzf
 fkill() {
   local selected
   selected=$(ps aux \

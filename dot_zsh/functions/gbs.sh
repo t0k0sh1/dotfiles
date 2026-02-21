@@ -1,3 +1,4 @@
+# Description: Search and switch Git branches with fzf
 gbs() {
   local query="$1"
   local branches target

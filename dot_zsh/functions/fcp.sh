@@ -1,3 +1,4 @@
+# Description: Copy a file to a fzf-selected destination
 fcp() {
   local src dest
   src=$(fzf --preview 'bat --style=numbers --color=always {} 2>/dev/null || ls -la {}')

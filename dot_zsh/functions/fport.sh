@@ -1,5 +1,4 @@
-# ポート指定モード: fport 3000
-# インタラクティブモード: fport（リスニングポート一覧からfzf選択）
+# Description: Manage listening ports/processes with fzf
 fport() {
   local port="$1"
   if [[ -n "$port" ]]; then

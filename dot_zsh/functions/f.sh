@@ -1,3 +1,4 @@
+# Description: Search files with ripgrep+fzf and open in nvim
 f() {
   local file
   file=$(fzf --height 40% --reverse \

@@ -1,3 +1,4 @@
+# Description: Reset Docker Compose (down -v && up -d)
 dcr() {
   if ! command -v docker &>/dev/null; then
     echo "Error: docker command not found" >&2

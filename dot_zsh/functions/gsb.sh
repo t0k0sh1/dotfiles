@@ -1,3 +1,4 @@
+# Description: Create a new Git branch (spaces to hyphens, dupe check)
 gsb() {
   if [[ $# -eq 0 ]]; then
     echo "Usage: gsb <branch-name>" >&2

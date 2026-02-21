@@ -1,3 +1,4 @@
+# Description: Browse Git log with fzf and show full diff on preview
 glo() {
   local commit hash
 

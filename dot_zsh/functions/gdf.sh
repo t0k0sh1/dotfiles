@@ -1,3 +1,4 @@
+# Description: Open changed files (git status) in nvim via fzf
 gdf() {
   local selected file
 

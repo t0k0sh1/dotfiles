@@ -1,3 +1,4 @@
+# Description: Delete Git branches selected with fzf (multi-select)
 gbd() {
   local current branches selected
 

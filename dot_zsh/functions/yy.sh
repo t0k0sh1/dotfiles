@@ -1,4 +1,4 @@
-# yazi wrapper: 終了時に最後のディレクトリへ cd する
+# Description: Yazi wrapper that cd's to last visited directory on exit
 yy() {
   local tmp
   tmp=$(mktemp -t "yazi-cwd.XXXXX")
