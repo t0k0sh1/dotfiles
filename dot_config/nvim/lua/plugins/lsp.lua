@@ -14,8 +14,6 @@ return {
         "gofumpt",
         "pyright",
         "css-lsp",
-        "markdownlint-cli2",
-        "markdown-toc",
       })
     end,
   },
@@ -243,5 +241,17 @@ return {
         },
       },
     },
+  },
+  {
+    "saecki/crates.nvim",
+    tag = "stable",
+    config = function()
+      require("crates").setup()
+    end,
+  },
+  {
+    "mrcjkb/rustaceanvim",
+    version = "^8", -- Recommended
+    lazy = false, -- This plugin is already lazy
   },
 }
