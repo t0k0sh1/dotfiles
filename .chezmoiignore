@@ -1,1 +1,6 @@
 .config/nvim/.git
+README.md
+Brewfile
+CLAUDE.md
+CONTRIBUTING.md
+install.sh
