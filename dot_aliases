@@ -27,8 +27,11 @@ alias tf="terraform"
 # aliases for Git
 alias g="git"
 alias gs="git status --short"
-# alias gd="git diff"
-alias gd="npx difit"
+alias gd="git diff"
+alias gdc="npx difit" # diff last commit
+alias gds="npx difit staged" # diff staging and last commit
+alias gdw="npx difit working" # diff working and last commit
+alias gda="npx difit ." # diff staging and working
 alias gu="git pull"
 alias gp="git push"
 alias gl="git log"
