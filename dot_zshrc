@@ -3,11 +3,14 @@
 # ============================
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 export PATH="$PATH:$HOME/.antigravity/antigravity/bin"
-export PNPM_HOME="$HOME/Library/pnpm"
+# pnpm
+export PNPM_HOME="/Users/t0k0sh1/Library/pnpm"
 case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
+  *":$PNPM_HOME/bin:"*) ;;
+  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
 esac
+# pnpm end
+. "/Users/t0k0sh1/.deno/env"
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
@@ -185,6 +188,4 @@ if [[ $- == *i* ]] && [ -z "$TMUX" ]; then
     tmux new -s "${base}-${num}"
   fi
 fi
-
-. "/Users/t0k0sh1/.deno/env"
 
