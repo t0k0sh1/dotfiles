@@ -8,7 +8,6 @@
   compression = 9
   whitespace = error
   preloadindex = true
-  pager = delta
   editor = vi
 [advance]
   addEmptyPathspec = false
@@ -38,30 +37,10 @@
   upstream = green
   plain = blue
 [alias]
-  lgn = log --graph --decorate --abbrev-commit --format=format:'%C(blue)%h%C(reset) - %C(green)(%ar)%C(reset)%C(yellow)%d%C(reset)\n  %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
-  diff = "!f() { \
-        diff_command=\"git diff\"; \
-        if [ \"$#\" -gt 0 ]; then \
-            diff_command=\"$diff_command $@\"; \
-        fi; \
-        files=$(git diff --name-only \"$@\" | fzf --multi --preview \"$diff_command --color=always {} | delta\" --preview-window=right:60%:wrap); \
-        if [ -n \"$files\" ]; then \
-            eval $diff_command $files | delta; \
-        fi; \
-    }; f"
   co = checkout -b
   n = now --all --stat
 [sequence]
   editor = vi
-[interactive]
-  diffFilter = delta --color-only
-[delta]
-  diff-so-fancy=true
-  keep-plus-minus-markers=true
-  minus-emph-style="bold 94 89"
-  plus-emph-style="bold 29 29"
-  hunk-header-style="omit"
-  line-numbers=true
 [merge]
   tool = code --wait \"$MERGED\"
 [commit]
@@ -79,3 +58,9 @@
 	default = cursor
 [gtr "ai"]
 	default = claude
+[credential "https://github.com"]
+	helper = 
+	helper = !/nix/store/5m3slxi84h97r5hzmy4dhfksl9cc166a-gh-2.96.0/bin/.gh-wrapped auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/nix/store/5m3slxi84h97r5hzmy4dhfksl9cc166a-gh-2.96.0/bin/.gh-wrapped auth git-credential

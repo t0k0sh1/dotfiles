@@ -54,3 +54,11 @@ alias cc="claude"
 if [[ -f ~/.aliases.local ]]; then
   source ~/.aliases.local
 fi
+
+# aliases for Nix
+alias nix-search="nix-env -qaP"
+alias nix-install="nix-env -iA"
+alias nix-uninstall="nix-env -e"
+alias nix-list="nix-env -q"
+alias nix-update-all="nix-env -u '*'"
+alias nix-update="nix-env -u"
